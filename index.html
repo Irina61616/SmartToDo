@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTodo - Умный список задач</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-check-circle"></i> SmartTodo</h1>
+            <p class="subtitle">Управляйте своими задачами эффективно</p>
+        </header>
+
+        <div class="todo-card">
+            <div class="add-task">
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Что нужно сделать?" required>
+                    <select id="task-priority">
+                        <option value="low">Низкий</option>
+                        <option value="medium" selected>Средний</option>
+                        <option value="high">Высокий</option>
+                    </select>
+                    <button type="submit" class="btn-add">
+                        <i class="fas fa-plus"></i> Добавить
+                    </button>
+                </form>
+            </div>
+
+        
+            <div class="task-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Поиск задач...">
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="active">Активные</button>
+                    <button class="filter-btn" data-filter="completed">Выполненные</button>
+                </div>
+            </div>
+
+            <div class="task-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Всего:</span>
+                    <span class="stat-value" id="total-tasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Выполнено:</span>
+                    <span class="stat-value" id="completed-tasks">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Осталось:</span>
+                    <span class="stat-value" id="pending-tasks">0</span>
+                </div>
+            </div>
+
+            <div class="tasks-list" id="tasks-list">
+            </div>
+
+            <div class="clear-completed">
+                <button id="clear-completed-btn" class="btn-clear">
+                    <i class="fas fa-trash"></i> Очистить выполненные
+                </button>
+            </div>
+        </div>
+
+        <div class="quote-card">
+            <i class="fas fa-quote-right"></i>
+            <p id="random-quote">Маленькие шаги каждый день приводят к большим результатам</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
